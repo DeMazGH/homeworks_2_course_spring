@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import pro.sky.homeworks.homeworks2coursespring.service.BasketService;
 
+import java.util.ArrayList;
+
 @RestController
 @RequestMapping("/order")
 public class BasketController {
@@ -17,13 +19,8 @@ public class BasketController {
     }
 
     @GetMapping(value = "/add")
-    public void add(@RequestParam("itemId") Integer itemId) {
+    public void add(@RequestParam("itemId") ArrayList<Integer> itemId) {
         basketService.add(itemId);
-    }
-
-    @GetMapping(value = "/add", params = {"firstItemId", "secondItemId"})
-    public void add(@RequestParam("firstItemId") Integer firstItemId, @RequestParam("secondItemId") Integer secondItemId) {
-        basketService.add(firstItemId, secondItemId);
     }
 
     @GetMapping(value = "/get")

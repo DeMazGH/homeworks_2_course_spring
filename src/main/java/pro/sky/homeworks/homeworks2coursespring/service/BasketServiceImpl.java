@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.SessionScope;
 import pro.sky.homeworks.homeworks2coursespring.model.Basket;
 
+import java.util.ArrayList;
 import java.util.Collections;
 
 @Service
@@ -17,14 +18,8 @@ public class BasketServiceImpl implements BasketService {
     }
 
     @Override
-    public void add(Integer itemId) {
-        basket.getItemList().add(itemId);
-    }
-
-    @Override
-    public void add(Integer firstItemId, Integer secondItemId) {
-        basket.getItemList().add(firstItemId);
-        basket.getItemList().add(secondItemId);
+    public void add(ArrayList<Integer> itemId) {
+        basket.getItemList().addAll(itemId);
     }
 
     @Override
