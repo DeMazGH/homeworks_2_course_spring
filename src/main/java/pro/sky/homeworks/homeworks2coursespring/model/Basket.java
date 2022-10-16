@@ -10,8 +10,8 @@ public class Basket {
 
     private final List<Integer> itemList;
 
-    public Basket(ArrayList<Integer> itemList) {
-        this.itemList = itemList;
+    public Basket() {
+        this.itemList = new ArrayList<>();
     }
 
     public List<Integer> getItemList() {

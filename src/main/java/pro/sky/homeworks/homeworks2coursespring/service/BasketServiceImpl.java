@@ -1,19 +1,19 @@
 package pro.sky.homeworks.homeworks2coursespring.service;
 
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
+import org.springframework.web.context.annotation.SessionScope;
 import pro.sky.homeworks.homeworks2coursespring.model.Basket;
 
 import java.util.Collections;
 
 @Service
-@Scope("session")
+@SessionScope
 public class BasketServiceImpl implements BasketService {
 
     private final Basket basket;
 
-    public BasketServiceImpl(Basket basket) {
-        this.basket = basket;
+    public BasketServiceImpl() {
+        this.basket = new Basket();
     }
 
     @Override
